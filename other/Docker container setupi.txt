@@ -1,0 +1,30 @@
+If it's relevant, I couldn't work with a local Docker instance because I lack admin rights on my work PC. Instead, I set up my Docker container on a Red Hat VM using the following steps:
+
+Postgres SQL docker container
+https://hub.docker.com/_/postgres
+
+--To create the docker container
+
+#docker run --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=limewire -d -p 5432:5432 postgres 
+
+docker run --name some-postgres -e POSTGRES_PASSWORD=limewire -d postgres
+
+
+--To connect to the container:
+
+sudo docker exec -it 4557fdc9766e bash
+
+--Then to get into the psql shell:
+
+psql -U postgres
+
+--To create the DB:
+
+postgres-# CREATE DATABASE case_challenge;
+
+
+
+
+
